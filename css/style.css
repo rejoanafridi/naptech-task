@@ -36,4 +36,127 @@ nav .menu-icon img {
   width: 24px;
 }
 
+header {
+  background: url(../assets/banner-left-star.png);
+  background-repeat: no-repeat;
+  background-size: 3.5%;
+}
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .header .left-content p {
+  font-size: 94px;
+  font-weight: 700;
+}
+header .header span {
+  color: #3a78f2;
+}
+header .header .right-img {
+  background: url(../assets/Polygon\ 7.png), url(../assets/Polygon\ 6.png);
+  background-repeat: no-repeat;
+  background-position: left top, bottom right;
+  background-origin: content-box;
+}
+header button {
+  border: 0.5px solid #3a78f2;
+  padding: 12px 37px;
+  border-radius: 7px;
+  margin-right: 70px;
+  font-weight: 500;
+  background: none;
+  color: #3a78f2;
+}
+header button:hover {
+  background-color: #3a78f2;
+  color: #fff;
+}
+header .h-section-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 100px;
+  flex-wrap: wrap;
+}
+
+.service-boxs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  gap: 60px;
+  padding-bottom: 20px;
+}
+.service-boxs .box {
+  padding: 33px;
+  border-radius: 10px;
+  width: 383px;
+  height: 380px;
+  border: 1px solid #7c7c7c;
+  margin: 0 auto;
+}
+.service-boxs .box img {
+  background-color: #1d2225;
+  margin-bottom: 33px;
+}
+.service-boxs .box h3 {
+  margin-bottom: 33px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.service-boxs .box span {
+  color: grey;
+}
+.service-boxs .box p {
+  margin: 33px 0;
+  font-weight: 700;
+}
+.service-boxs .box:hover {
+  background-color: #3a78f2;
+  transition: 0.2s ease-in;
+  color: #fff;
+}
+.service-boxs .box:hover span {
+  color: #fff;
+}
+
+.section-wy {
+  background: linear-gradient(to top, #fff 50%, #3a78f2 50%) no-repeat;
+}
+
+.why-section .why-section-banner {
+  background-size: 80px;
+  padding-top: 100px;
+  background: url(../assets/Group.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+.why-section .why-section-banner img {
+  width: 100%;
+  border-radius: 40px;
+}
+.why-section .w-details {
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.why-section .w-details .icon img {
+  width: 40px;
+  margin-right: 20px;
+}
+.why-section .w-details .w-d-text p {
+  color: grey;
+}
+
+.groth {
+  background-color: #3a78f2;
+  display: flex;
+  padding: 30px;
+}
+
 /*# sourceMappingURL=style.css.map */
