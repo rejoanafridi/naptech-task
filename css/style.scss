@@ -139,6 +139,10 @@ header {
 	background: linear-gradient(to top, #fff 50%, $pm-color 50%) no-repeat;
 }
 .why-section {
+	p,h1{
+		color: #fff;
+		font-weight: $font-bold;
+	}
 	.why-section-banner {
 		background-size: 80px;
 		padding-top: 100px;
@@ -168,13 +172,194 @@ header {
 		}
 	}
 }
-
-.groth {
+.groth-section {
 	background-color: $pm-color;
-	display: flex;
+	margin-bottom: 80px;
 
-	padding: 30px;
-	hr {
-		
+	.groth {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		padding: 40px 0px;
+		.groth-box {
+			display: flex;
+			justify-content: space-around;
+			h1 {
+				font-weight: $font-bold;
+				color: white;
+			}
+			p {
+				color: #dad6d6;
+			}
+		}
+
+		.br {
+			border-right: 2px solid #fff;
+			height: 100px;
+		}
+	}
+}
+
+.price {
+	.price-section-title {
+		margin: 30px 0;
+		text-align: center;
+		h1 {
+			font-weight: $font-bold;
+		}
+	}
+}
+
+form {
+	padding-bottom: 59px;
+	.form-header {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		padding: 10px 20px;
+		background-color: #eff4fe;
+		border-radius: 10px;
+		justify-content: center;
+	}
+	.form-data {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		padding: 10px 20px;
+		background-color: #ffffff;
+		border-radius: 10px;
+		justify-content: center;
+		button {
+			border: 0.5px solid $pm-color;
+			padding: 12px 27px;
+			border-radius: 7px;
+			margin-right: 50px;
+			font-weight: $font-medium;
+			background: none;
+			color: $pm-color;
+		}
+		button:hover {
+			background-color: $pm-color;
+			color: #fff;
+		}
+	}
+}
+
+.message-section {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	.message-form-body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	input:focus ~ label,
+	textarea:focus ~ label,
+	input:valid ~ label,
+	textarea:valid ~ label {
+		font-size: 0.75em;
+		color: #999;
+		top: -5px;
+		-webkit-transition: all 0.225s ease;
+		transition: all 0.225s ease;
+	}
+
+	.styled-input {
+		float: left;
+		width: 293px;
+		margin: 1rem 0;
+		position: relative;
+		border-radius: 4px;
+	}
+
+	@media only screen and (max-width: 768px) {
+		.styled-input {
+			width: 100%;
+		}
+	}
+
+	.styled-input label {
+		color: #999;
+		padding: 1.3rem 30px 1rem 30px;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		-webkit-transition: all 0.25s ease;
+		transition: all 0.25s ease;
+		pointer-events: none;
+	}
+
+	.styled-input.wide {
+		width: 650px;
+		max-width: 100%;
+	}
+
+	input,
+	textarea {
+		padding: 7px;
+		border: 0;
+		width: 100%;
+		font-size: 1rem;
+		background-color: #e9e8e8;
+		color: #000000;
+		border-radius: 10px;
+	}
+
+	input:focus,
+	textarea:focus {
+		outline: 0;
+	}
+
+	input:focus ~ span,
+	textarea:focus ~ span {
+		width: 100%;
+		-webkit-transition: all 0.075s ease;
+		transition: all 0.075s ease;
+	}
+
+	textarea {
+		width: 100%;
+		min-height: 15em;
+	}
+
+	.input-container {
+		width: 650px;
+		max-width: 100%;
+		margin: 20px auto 25px auto;
+	}
+
+	.submit-btn {
+		padding: 7px 35px;
+		border-radius: 60px;
+		display: inline-block;
+		margin-left: 220px;
+		background-color: $pm-color;
+		color: white;
+		font-size: 18px;
+		cursor: pointer;
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06),
+			0 2px 10px 0 rgba(0, 0, 0, 0.07);
+		-webkit-transition: all 300ms ease;
+		transition: all 300ms ease;
+	}
+
+	.submit-btn:hover {
+		transform: translateY(1px);
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.09);
+	}
+
+	@media (max-width: 768px) {
+		.submit-btn {
+			width: 100%;
+			float: none;
+			text-align: center;
+		}
+	}
+
+	input[type="checkbox"] + label {
+		color: #ccc;
+		font-style: italic;
+	}
+
+	input[type="checkbox"]:checked + label {
+		color: #f00;
+		font-style: normal;
 	}
 }
