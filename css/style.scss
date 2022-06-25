@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;700&display=swap");
 * {
 	font-family: "Oxanium", cursive;
+	margin: 0;
+	padding: 0;
 }
 
 $pm-color: #3a78f2;
@@ -51,10 +53,6 @@ header {
 
 	.header {
 		align-items: center;
-		.row {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-		}
 
 		.left-content p {
 			font-size: 94px;
@@ -65,12 +63,13 @@ header {
 			color: $pm-color;
 		}
 		.right-img {
-			background: url(../assets/Polygon\ 7.png), url(../assets/Polygon\ 6.png);
+			background: url(../assets/Polygon\ 7.png);
 			background-repeat: no-repeat;
-			background-position: left top, bottom right;
-			padding-bottom: 170px;
-			padding-right: 120px;
-			background-size: auto;
+			background-position: left top;
+
+			img {
+				width: 80%;
+			}
 		}
 	}
 	button {
@@ -99,15 +98,40 @@ header {
 		font-size: 55px !important;
 	}
 	.right-img {
-		width: 100%;
+		// width: 100%;
+		background-size: 35vw;
 		img {
-			width: 100%;
+			width: 40vh;
+		}
+	}
+	.h-section-icon {
+		img {
+			width: 14vw;
+		}
+	}
+	.header-polygen-6 {
+		position: relative;
+		width: 183px;
+		z-index: -1;
+		left: 201px;
+		top: -113px;
+	}
+	header {
+		button {
+			padding: 10px;
 		}
 	}
 }
 @media only screen and (min-width: 769px) {
 	.left-content p {
 		font-size: 94px !important;
+	}
+	.header-polygen-6 {
+		position: relative;
+		width: 300px;
+		z-index: -1;
+		left: 358px;
+		top: -185px;
 	}
 }
 
@@ -131,6 +155,7 @@ header {
 		img {
 			background-color: #1d2225;
 			margin-bottom: 33px;
+			padding: 14px;
 		}
 		h3 {
 			margin-bottom: 33px;
@@ -164,22 +189,34 @@ header {
 		font-weight: $font-bold;
 	}
 	.why-section-banner {
-		background-size: 80px;
-		padding-top: 100px;
-		background: url(../assets/Group.png);
+		// padding-top: 100px;
+		background: url(../assets/elegant-man-suit-showing-two-partners-paper\ 1.png);
 		background-repeat: no-repeat;
 		background-position: center;
+		height: 600px;
+		border-radius: 50px;
+		background-size: cover;
+		margin-top: 100px;
+
+		// background-size: contain;
 
 		display: flex;
 
 		justify-content: center;
 		img {
-			width: 100%;
-			border-radius: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100px;
+			position: relative;
+			margin-top: 25vh;
 		}
 	}
 	.w-details {
 		padding-top: 70px;
+		> div {
+			margin: 20px 0;
+		}
 
 		.icon img {
 			width: 40px;
@@ -190,6 +227,7 @@ header {
 		}
 	}
 }
+
 .groth-section {
 	background-color: $pm-color;
 	margin-bottom: 80px;
@@ -229,7 +267,7 @@ header {
 
 form {
 	padding-bottom: 59px;
-	
+
 	input:checked ~ .checkmark {
 		background-color: #1aae13;
 	}
@@ -274,16 +312,47 @@ form {
 
 .message-section {
 	.left-image {
-		background: url(../assets/Polygon\ 7.png), url(../assets/Polygon\ 6.png);
+		background: url(../assets/Polygon\ 7.png);
 
 		background-repeat: no-repeat;
 		background-position: left top, bottom right;
-		margin-bottom: 50px;
+
+		img {
+			width: 80%;
+		}
 	}
-	// .left-image:before {
-	// 	margin-bottom: 39px;
-	// 	transform: rotate(30deg);
+	// .polygen-6 {
+	// 	position: relative;
+	// 	width: 300px;
+	// 	top: -270px;
+	// 	left: 241px;
+	// 	transform: rotate(196deg);
+	// 	z-index: -1;
 	// }
+	@media only screen and (min-width: 320px) {
+		.polygen-6 {
+			position: relative;
+			width: 201px;
+			top: -175px;
+			left: 122px;
+			transform: rotate(196deg);
+			z-index: -1;
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		.polygen-6 {
+			position: relative;
+			width: 300px;
+			top: -270px;
+			left: 241px;
+			transform: rotate(196deg);
+			z-index: -1;
+		}
+	}
+	.left-image:before {
+		margin-bottom: 39px;
+		transform: rotate(30deg);
+	}
 	.message-form-body {
 		display: flex;
 		flex-direction: column;
@@ -303,12 +372,6 @@ form {
 	.styled-input {
 		margin: 1rem 0;
 		border-radius: 4px;
-	}
-
-	@media only screen and (max-width: 768px) {
-		.styled-input {
-			width: 100%;
-		}
 	}
 
 	.styled-input label {
@@ -383,6 +446,20 @@ form {
 	}
 }
 
+@media only screen and (min-width: 320px) {
+	.left-image {
+		background-position: 20vw;
+	}
+	.polygen-6 {
+		position: relative;
+		width: 201px;
+		top: -175px;
+		left: 122px;
+		transform: rotate(196deg);
+		z-index: -1;
+	}
+}
+
 // about css
 .about {
 	background-color: #f8f8f8;
@@ -403,6 +480,19 @@ form {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+	.view-btn {
+		display: flex;
+		justify-content: center;
+		padding-top: 30px;
+		button {
+			padding: 10px 30px;
+			border: none;
+			border-radius: 5px;
+			color: white;
+
+			background-color: $pm-color;
+		}
 	}
 }
 // footer css
@@ -426,5 +516,10 @@ footer {
 		color: white;
 		padding: 5px 15px;
 		margin-top: 140px;
+	}
+	.footer-logo {
+		img {
+			margin: 0 20px;
+		}
 	}
 }
