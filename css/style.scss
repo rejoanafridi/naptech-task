@@ -45,6 +45,36 @@ nav {
 		width: 24px;
 	}
 }
+@media only screen and (min-width: 320px) {
+	nav {
+		li {
+			margin: 0 10px;
+			padding: 5px;
+		}
+		ul {
+			position: absolute;
+			right: 10px;
+			background-color: whitesmoke;
+			top: 97px;
+		}
+	}
+}
+@media only screen and (min-width: 769px) {
+	nav {
+		li {
+			margin: 0 20px;
+			padding-top: 1px;
+			cursor: pointer;
+			font-size: 22px;
+		}
+		ul {
+			top: 43px;
+			display: flex;
+			right: 725px;
+			background: none;
+		}
+	}
+}
 
 header {
 	background: url(../assets/banner-left-star.png);
@@ -172,7 +202,7 @@ header {
 	}
 	.box:hover {
 		background-color: $pm-color;
-		transition: 0.2s ease-in;
+		transition: 0.5s ease-in;
 		color: #fff;
 		span {
 			color: #fff;
@@ -268,17 +298,6 @@ header {
 form {
 	padding-bottom: 59px;
 
-	input:checked ~ .checkmark {
-		background-color: #1aae13;
-	}
-	.checkmark {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 25px;
-		width: 25px;
-		background-color: #eee;
-	}
 	.form-header {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -294,6 +313,42 @@ form {
 		background-color: #ffffff;
 		border-radius: 10px;
 		justify-content: center;
+		button {
+			border: 0.5px solid $pm-color;
+			padding: 12px 27px;
+			border-radius: 7px;
+			margin-right: 50px;
+			font-weight: $font-medium;
+			background: none;
+			color: $pm-color;
+		}
+		button:hover {
+			background-color: $pm-color;
+			color: #fff;
+		}
+	}
+}
+.mobile-form {
+	padding-bottom: 59px;
+
+	.form-header {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 20px;
+		background-color: #eff4fe;
+		border-radius: 10px;
+		
+	}
+	.form-data {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 20px;
+		background-color: #ffffff;
+		border-radius: 10px;
+		span{
+			color: $pm-color;
+			font-weight: $font-bold;
+		}
 		button {
 			border: 0.5px solid $pm-color;
 			padding: 12px 27px;
