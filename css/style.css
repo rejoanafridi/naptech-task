@@ -133,7 +133,7 @@ header .h-section-icon {
   }
 
   header button {
-    padding: 10px;
+    padding: 7px;
   }
 }
 @media only screen and (min-width: 769px) {
@@ -147,6 +147,10 @@ header .h-section-icon {
     z-index: -1;
     left: 358px;
     top: -185px;
+  }
+
+  header button {
+    padding: 12px 37px;
   }
 }
 .service-boxs {
@@ -204,7 +208,6 @@ header .h-section-icon {
   background: url(../assets/elegant-man-suit-showing-two-partners-paper\ 1.png);
   background-repeat: no-repeat;
   background-position: center;
-  height: 600px;
   border-radius: 50px;
   background-size: cover;
   margin-top: 100px;
@@ -218,6 +221,11 @@ header .h-section-icon {
   height: 100px;
   position: relative;
   margin-top: 25vh;
+  margin-bottom: 25vh;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
 }
 .why-section .w-details {
   padding-top: 70px;
@@ -233,6 +241,34 @@ header .h-section-icon {
   color: grey;
 }
 
+@media only screen and (min-width: 320px) {
+  .section-wy {
+    background: linear-gradient(to top, #fff 75%, #3a78f2 50%) no-repeat;
+  }
+
+  .why-section .why-section-banner {
+    border-radius: 20px;
+  }
+  .why-section .why-section-banner img {
+    height: 50px;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .section-wy {
+    background: linear-gradient(to top, #fff 50%, #3a78f2 50%) no-repeat;
+  }
+
+  .why-section .why-section-banner {
+    border-radius: 50px;
+  }
+  .why-section .why-section-banner img {
+    height: 100px;
+    margin-top: 25vh;
+    margin-bottom: 27vh;
+  }
+}
 .groth-section {
   background-color: #3a78f2;
   margin-bottom: 80px;
@@ -284,6 +320,10 @@ form .form-data {
   background-color: #ffffff;
   border-radius: 10px;
   justify-content: center;
+}
+form .form-data span {
+  color: #3a78f2;
+  font-weight: 700;
 }
 form .form-data button {
   border: 0.5px solid #3a78f2;
@@ -433,7 +473,8 @@ form .form-data button:hover {
   font-size: 18px;
   cursor: pointer;
   border: none;
-  border-radius: 20px;
+  border-radius: 7px;
+  padding: 10px 20px;
   width: 200px;
   margin: 0 auto;
 }
