@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;700&display=swap");
 * {
 	font-family: "Oxanium", cursive;
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 }
 
 $pm-color: #3a78f2;
@@ -29,10 +29,12 @@ nav {
 		margin: 0 25px;
 		padding-top: 15px;
 		cursor: pointer;
+		color: #546c80;
 	}
 	li:hover {
 		font-weight: $font-medium;
-		transition: 0.3s ease-in;
+		transition: 0.3s ease-in-out;
+		color: #303e49;
 	}
 	.get-btn button {
 		border: none;
@@ -40,6 +42,9 @@ nav {
 		padding: 10px 30px;
 		background-color: #282a2c;
 		color: white;
+	}
+	.get-btn button:hover {
+		background-color: $pm-color;
 	}
 	.menu-icon img {
 		width: 24px;
@@ -85,21 +90,12 @@ header {
 		align-items: center;
 
 		.left-content p {
-			font-size: 94px;
+			font-size: 5rem;
 			font-weight: $font-bold;
 		}
 
 		span {
 			color: $pm-color;
-		}
-		.right-img {
-			background: url(../assets/Polygon\ 7.png);
-			background-repeat: no-repeat;
-			background-position: left top;
-
-			img {
-				width: 80%;
-			}
 		}
 	}
 	button {
@@ -120,32 +116,29 @@ header {
 		justify-content: space-between;
 		align-items: center;
 		padding-top: 100px;
+
+		img:hover {
+			color: black;
+			filter: invert(100%);
+		}
 	}
 }
 
 @media only screen and (min-width: 320px) {
 	.left-content p {
-		font-size: 55px !important;
-	}
-	.right-img {
-		// width: 100%;
-		background-size: 35vw;
+		font-size: 2.7rem !important;
+		margin-left: 3rem;
 		img {
-			width: 40vh;
+			width: 70px;
 		}
 	}
+
 	.h-section-icon {
 		img {
 			width: 14vw;
 		}
 	}
-	.header-polygen-6 {
-		position: relative;
-		width: 183px;
-		z-index: -1;
-		left: 201px;
-		top: -113px;
-	}
+
 	header {
 		button {
 			padding: 7px;
@@ -154,25 +147,25 @@ header {
 }
 @media only screen and (min-width: 769px) {
 	.left-content p {
-		font-size: 94px !important;
+		font-size: 3.7rem !important;
+		margin-left: 0;
 	}
-	.header-polygen-6 {
-		position: relative;
-		width: 300px;
-		z-index: -1;
-		left: 358px;
-		top: -185px;
-	}
+
 	header {
 		button {
 			padding: 12px 37px;
 		}
 	}
 }
+@media only screen and (min-width: 1024px) {
+	.left-content p {
+		font-size: 5.7rem !important;
+	}
+}
 // section box css
 .service-boxs {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 20px;
@@ -181,17 +174,22 @@ header {
 	.box {
 		padding: 33px;
 		border-radius: 10px;
-		width: 383px;
+		// width: 383px;
 
 		border: 1px solid #7c7c7c;
 		margin: 0 auto;
 
-		img {
+		.box-img {
 			background-color: #1d2225;
 			margin-bottom: 33px;
-			padding: 14px;
+			padding: 20px 10px;
+			img {
+				width: 35px;
+			}
 		}
+
 		h3 {
+			margin-top: 30px;
 			margin-bottom: 33px;
 			font-size: 24px;
 			font-weight: $font-bold;
@@ -206,13 +204,39 @@ header {
 	}
 	.box:hover {
 		background-color: $pm-color;
-		transition: 0.5s ease-in;
+		transition: 0.3s ease-in;
 		color: #fff;
 		span {
 			color: #fff;
 		}
+		.box-img {
+			background-color: #fff;
+			img {
+				filter: invert(100%);
+			}
+		}
 	}
 }
+
+@media only screen and (min-width: 320px) {
+	.service-boxs {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+@media only screen and (min-width: 768px) {
+	.service-boxs {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.service-boxs {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
 .section-wy {
 	background: linear-gradient(to top, #fff 50%, $pm-color 50%) no-repeat;
 }
@@ -245,20 +269,19 @@ header {
 			margin-bottom: 25vh;
 			background-color: #fff;
 			border-radius: 50%;
-			overflow: hidden;
+
 			border: none;
-			
+			cursor: pointer;
 		}
 	}
 	.w-details {
-		padding-top: 70px;
+		padding-top: 60px;
 		> div {
 			margin: 20px 0;
 		}
 
 		.icon img {
 			width: 40px;
-			margin-right: 20px;
 		}
 		.w-d-text p {
 			color: grey;
@@ -272,23 +295,38 @@ header {
 	.why-section .why-section-banner {
 		border-radius: 20px;
 		img {
-			height: 50px;
+			height: 30px;
 
 			margin-top: 7vh;
 			margin-bottom: 7vh;
 		}
 	}
 }
-@media only screen and (min-width: 769px) {
+
+@media only screen and (min-width: 768px) {
 	.section-wy {
 		background: linear-gradient(to top, #fff 50%, $pm-color 50%) no-repeat;
 	}
 	.why-section .why-section-banner {
 		border-radius: 50px;
 		img {
-			height: 100px;
+			min-height: 100px;
 
 			margin-top: 25vh;
+			margin-bottom: 27vh;
+		}
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.section-wy {
+		background: linear-gradient(to top, #fff 50%, $pm-color 50%) no-repeat;
+	}
+	.why-section .why-section-banner {
+		border-radius: 50px;
+		img {
+			min-height: 100px;
+
+			margin-top: 20vh;
 			margin-bottom: 27vh;
 		}
 	}
@@ -304,9 +342,10 @@ header {
 		.groth-box {
 			display: flex;
 			justify-content: space-around;
-			h1 {
+			span {
 				font-weight: $font-bold;
 				color: white;
+				font-size: 42px;
 			}
 			p {
 				color: #dad6d6;
@@ -404,41 +443,6 @@ form {
 }
 
 .message-section {
-	.left-image {
-		background: url(../assets/Polygon\ 7.png);
-
-		background-repeat: no-repeat;
-		background-position: left top, bottom right;
-
-		img {
-			width: 80%;
-		}
-	}
-
-	@media only screen and (min-width: 320px) {
-		.polygen-6 {
-			position: relative;
-			width: 201px;
-			top: -175px;
-			left: 122px;
-			transform: rotate(196deg);
-			z-index: -1;
-		}
-	}
-	@media only screen and (min-width: 768px) {
-		.polygen-6 {
-			position: relative;
-			width: 300px;
-			top: -270px;
-			left: 241px;
-			transform: rotate(196deg);
-			z-index: -1;
-		}
-	}
-	.left-image:before {
-		margin-bottom: 39px;
-		transform: rotate(30deg);
-	}
 	.message-form-body {
 		display: flex;
 		flex-direction: column;
@@ -457,7 +461,7 @@ form {
 
 	.styled-input {
 		margin: 1rem 0;
-		border-radius: 4px;
+		border-radius: 10px;
 	}
 
 	.styled-input label {
@@ -471,14 +475,9 @@ form {
 		pointer-events: none;
 	}
 
-	.styled-input.wide {
-		width: 650px;
-		max-width: 100%;
-	}
-
 	input,
 	textarea {
-		padding: 7px;
+		padding: 15px;
 		border: 0;
 		width: 100%;
 		font-size: 1rem;
@@ -501,7 +500,7 @@ form {
 
 	textarea {
 		width: 100%;
-		min-height: 15em;
+		min-height: 9rem;
 	}
 
 	.input-container {
@@ -520,8 +519,6 @@ form {
 		padding: 10px 20px;
 		width: 200px;
 		margin: 0 auto;
-
-		
 	}
 
 	input[type="checkbox"] + label {
@@ -535,26 +532,16 @@ form {
 	}
 }
 
-@media only screen and (min-width: 320px) {
-	.left-image {
-		background-position: 20vw;
-	}
-	.polygen-6 {
-		position: relative;
-		width: 201px;
-		top: -175px;
-		left: 122px;
-		transform: rotate(196deg);
-		z-index: -1;
-	}
-}
-
 // about css
 .about {
 	background-color: #f8f8f8;
 	padding: 100px 0;
 	.about-header {
 		text-align: center;
+
+		h4 {
+			font-size: 1.5rem;
+		}
 	}
 	.about-content {
 		padding: 40px;
@@ -584,6 +571,24 @@ form {
 		}
 	}
 }
+
+@media only screen and (min-width: 320px) {
+	.about-header {
+		text-align: center;
+		h1 {
+			font-size: 2.3rem;
+		}
+	}
+}
+@media only screen and (min-width: 768px) {
+	.about-header {
+		text-align: center;
+		h1 {
+			font-size: 3.3rem;
+		}
+	}
+}
+
 // footer css
 footer {
 	background-color: #1d2225;
@@ -603,12 +608,15 @@ footer {
 		background-color: $pm-color;
 		border: none;
 		color: white;
-		padding: 5px 15px;
-		margin-top: 140px;
+		padding: 10px 20px;
 	}
 	.footer-logo {
 		img {
 			margin: 0 20px;
+			cursor: pointer;
+		}
+		img:hover {
+			filter: invert(100%);
 		}
 	}
 }

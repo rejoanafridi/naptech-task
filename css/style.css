@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;700&display=swap");
 * {
   font-family: "Oxanium", cursive;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 nav {
@@ -23,10 +23,12 @@ nav li {
   margin: 0 25px;
   padding-top: 15px;
   cursor: pointer;
+  color: #546c80;
 }
 nav li:hover {
   font-weight: 500;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-in-out;
+  color: #303e49;
 }
 nav .get-btn button {
   border: none;
@@ -34,6 +36,9 @@ nav .get-btn button {
   padding: 10px 30px;
   background-color: #282a2c;
   color: white;
+}
+nav .get-btn button:hover {
+  background-color: #3a78f2;
 }
 nav .menu-icon img {
   width: 24px;
@@ -74,19 +79,11 @@ header .header {
   align-items: center;
 }
 header .header .left-content p {
-  font-size: 94px;
+  font-size: 5rem;
   font-weight: 700;
 }
 header .header span {
   color: #3a78f2;
-}
-header .header .right-img {
-  background: url(../assets/Polygon\ 7.png);
-  background-repeat: no-repeat;
-  background-position: left top;
-}
-header .header .right-img img {
-  width: 80%;
 }
 header button {
   border: 0.5px solid #3a78f2;
@@ -107,29 +104,22 @@ header .h-section-icon {
   align-items: center;
   padding-top: 100px;
 }
+header .h-section-icon img:hover {
+  color: black;
+  filter: invert(100%);
+}
 
 @media only screen and (min-width: 320px) {
   .left-content p {
-    font-size: 55px !important;
+    font-size: 2.7rem !important;
+    margin-left: 3rem;
   }
-
-  .right-img {
-    background-size: 35vw;
-  }
-  .right-img img {
-    width: 40vh;
+  .left-content p img {
+    width: 70px;
   }
 
   .h-section-icon img {
     width: 14vw;
-  }
-
-  .header-polygen-6 {
-    position: relative;
-    width: 183px;
-    z-index: -1;
-    left: 201px;
-    top: -113px;
   }
 
   header button {
@@ -138,24 +128,22 @@ header .h-section-icon {
 }
 @media only screen and (min-width: 769px) {
   .left-content p {
-    font-size: 94px !important;
-  }
-
-  .header-polygen-6 {
-    position: relative;
-    width: 300px;
-    z-index: -1;
-    left: 358px;
-    top: -185px;
+    font-size: 3.7rem !important;
+    margin-left: 0;
   }
 
   header button {
     padding: 12px 37px;
   }
 }
+@media only screen and (min-width: 1024px) {
+  .left-content p {
+    font-size: 5.7rem !important;
+  }
+}
 .service-boxs {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
@@ -165,16 +153,19 @@ header .h-section-icon {
 .service-boxs .box {
   padding: 33px;
   border-radius: 10px;
-  width: 383px;
   border: 1px solid #7c7c7c;
   margin: 0 auto;
 }
-.service-boxs .box img {
+.service-boxs .box .box-img {
   background-color: #1d2225;
   margin-bottom: 33px;
-  padding: 14px;
+  padding: 20px 10px;
+}
+.service-boxs .box .box-img img {
+  width: 35px;
 }
 .service-boxs .box h3 {
+  margin-top: 30px;
   margin-bottom: 33px;
   font-size: 24px;
   font-weight: 700;
@@ -188,13 +179,37 @@ header .h-section-icon {
 }
 .service-boxs .box:hover {
   background-color: #3a78f2;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
   color: #fff;
 }
 .service-boxs .box:hover span {
   color: #fff;
 }
+.service-boxs .box:hover .box-img {
+  background-color: #fff;
+}
+.service-boxs .box:hover .box-img img {
+  filter: invert(100%);
+}
 
+@media only screen and (min-width: 320px) {
+  .service-boxs {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .service-boxs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .service-boxs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .section-wy {
   background: linear-gradient(to top, #fff 50%, #3a78f2 50%) no-repeat;
 }
@@ -224,18 +239,17 @@ header .h-section-icon {
   margin-bottom: 25vh;
   background-color: #fff;
   border-radius: 50%;
-  overflow: hidden;
   border: none;
+  cursor: pointer;
 }
 .why-section .w-details {
-  padding-top: 70px;
+  padding-top: 60px;
 }
 .why-section .w-details > div {
   margin: 20px 0;
 }
 .why-section .w-details .icon img {
   width: 40px;
-  margin-right: 20px;
 }
 .why-section .w-details .w-d-text p {
   color: grey;
@@ -250,12 +264,12 @@ header .h-section-icon {
     border-radius: 20px;
   }
   .why-section .why-section-banner img {
-    height: 50px;
+    height: 30px;
     margin-top: 7vh;
     margin-bottom: 7vh;
   }
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   .section-wy {
     background: linear-gradient(to top, #fff 50%, #3a78f2 50%) no-repeat;
   }
@@ -264,8 +278,22 @@ header .h-section-icon {
     border-radius: 50px;
   }
   .why-section .why-section-banner img {
-    height: 100px;
+    min-height: 100px;
     margin-top: 25vh;
+    margin-bottom: 27vh;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .section-wy {
+    background: linear-gradient(to top, #fff 50%, #3a78f2 50%) no-repeat;
+  }
+
+  .why-section .why-section-banner {
+    border-radius: 50px;
+  }
+  .why-section .why-section-banner img {
+    min-height: 100px;
+    margin-top: 20vh;
     margin-bottom: 27vh;
   }
 }
@@ -282,9 +310,10 @@ header .h-section-icon {
   display: flex;
   justify-content: space-around;
 }
-.groth-section .groth .groth-box h1 {
+.groth-section .groth .groth-box span {
   font-weight: 700;
   color: white;
+  font-size: 42px;
 }
 .groth-section .groth .groth-box p {
   color: #dad6d6;
@@ -374,38 +403,6 @@ form .form-data button:hover {
   color: #fff;
 }
 
-.message-section .left-image {
-  background: url(../assets/Polygon\ 7.png);
-  background-repeat: no-repeat;
-  background-position: left top, bottom right;
-}
-.message-section .left-image img {
-  width: 80%;
-}
-@media only screen and (min-width: 320px) {
-  .message-section .polygen-6 {
-    position: relative;
-    width: 201px;
-    top: -175px;
-    left: 122px;
-    transform: rotate(196deg);
-    z-index: -1;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .message-section .polygen-6 {
-    position: relative;
-    width: 300px;
-    top: -270px;
-    left: 241px;
-    transform: rotate(196deg);
-    z-index: -1;
-  }
-}
-.message-section .left-image:before {
-  margin-bottom: 39px;
-  transform: rotate(30deg);
-}
 .message-section .message-form-body {
   display: flex;
   flex-direction: column;
@@ -422,7 +419,7 @@ form .form-data button:hover {
 }
 .message-section .styled-input {
   margin: 1rem 0;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 .message-section .styled-input label {
   color: #999;
@@ -434,13 +431,9 @@ form .form-data button:hover {
   transition: all 0.25s ease;
   pointer-events: none;
 }
-.message-section .styled-input.wide {
-  width: 650px;
-  max-width: 100%;
-}
 .message-section input,
 .message-section textarea {
-  padding: 7px;
+  padding: 15px;
   border: 0;
   width: 100%;
   font-size: 1rem;
@@ -460,7 +453,7 @@ form .form-data button:hover {
 }
 .message-section textarea {
   width: 100%;
-  min-height: 15em;
+  min-height: 9rem;
 }
 .message-section .input-container {
   width: 650px;
@@ -487,26 +480,15 @@ form .form-data button:hover {
   font-style: normal;
 }
 
-@media only screen and (min-width: 320px) {
-  .left-image {
-    background-position: 20vw;
-  }
-
-  .polygen-6 {
-    position: relative;
-    width: 201px;
-    top: -175px;
-    left: 122px;
-    transform: rotate(196deg);
-    z-index: -1;
-  }
-}
 .about {
   background-color: #f8f8f8;
   padding: 100px 0;
 }
 .about .about-header {
   text-align: center;
+}
+.about .about-header h4 {
+  font-size: 1.5rem;
 }
 .about .about-content {
   padding: 40px;
@@ -535,6 +517,22 @@ form .form-data button:hover {
   background-color: #3a78f2;
 }
 
+@media only screen and (min-width: 320px) {
+  .about-header {
+    text-align: center;
+  }
+  .about-header h1 {
+    font-size: 2.3rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about-header {
+    text-align: center;
+  }
+  .about-header h1 {
+    font-size: 3.3rem;
+  }
+}
 footer {
   background-color: #1d2225;
   color: white;
@@ -554,11 +552,14 @@ footer .footer-btn {
   background-color: #3a78f2;
   border: none;
   color: white;
-  padding: 5px 15px;
-  margin-top: 140px;
+  padding: 10px 20px;
 }
 footer .footer-logo img {
   margin: 0 20px;
+  cursor: pointer;
+}
+footer .footer-logo img:hover {
+  filter: invert(100%);
 }
 
 /*# sourceMappingURL=style.css.map */
