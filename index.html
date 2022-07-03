@@ -27,28 +27,31 @@
 <body>
      <!-- navbar start-->
      <nav class="container">
-          <div class="nav-logo">
-               <img src="./assets/logo.svg" alt="logo">
+          <div class="logo"> <img src="./assets/logo.svg" alt="logo">
                <p>TechTack</p>
           </div>
-          <div id="nav-item" class="nav-items d-none  d-md-block ">
-               <ul class="">
-                    <li>Services</li>
-                    <li>Why Us</li>
-                    <li>Pricing</li>
-                    <li>Review</li>
 
-               </ul>
-          </div>
+          <input type="checkbox" id="click">
+          <label for="click" class="menu-btn">
+               <i class="fas fa-bars"></i>
+          </label>
+
+          <ul>
+               <li><a class="active" href="#">Service</a></li>
+               <li><a href="#">Why Us</a></li>
+               <li><a href="#">Pricing</a></li>
+               <li><a href="#">Review</a></li>
+
+
+          </ul>
           <div class="get-btn d-none d-md-block">
                <button>Get Quotes</button>
           </div>
 
-          <div class="menu-icon  d-sm-block d-md-none border-0">
-               <img src="./assets/menu.png" alt="">
-          </div>
-
      </nav>
+
+
+
 
 
      <!-- navbar end-->
@@ -68,7 +71,7 @@
                     </div>
 
                </div>
-               
+
 
 
           </div>
@@ -82,7 +85,7 @@
                <img class="img-responsive" src="./assets/banner logo/Slack Logo.svg" alt="">
                <img class="img-responsive" src="./assets/banner logo/Microsoft Logo.svg" alt="">
                <img class="img-responsive" src="./assets/banner logo/icthubbgd Logo.svg" alt="">
-          
+
 
 
           </section>
@@ -108,7 +111,7 @@
                     <p>Learn more</p>
                </div>
                <div class="box">
-                    
+
                     <span class="box-img">
 
                          <img src="./assets/service logo/Our Services/s-logo (2).png" alt="">
@@ -167,12 +170,21 @@
                <h1>The #1 WordPress <br> Service Company</h1>
                <div class="why-section-banner">
 
-                    <img src="./assets/Group.png" alt="">
+                    <!-- <img src="./assets/Group.png" alt=""> -->
+                    <a id="play-video" class="video-play-button" href="#">
+                         <span></span>
+                    </a>
+
+
+                    <div id="video-overlay" class="video-overlay">
+                         <a class="video-overlay-close">&times;</a>
+                    </div>
                </div>
                <div class="w-details row">
                     <div class="d-flex gap-2 col-md-6  col-sm-12  col-xs-12">
                          <div class="icon">
                               <img src="./assets/why-logo/flash.png" alt="">
+
                          </div>
                          <div class="w-d-text">
                               <h3>10+ fast Working processes</h3>
@@ -550,7 +562,7 @@
                <div class="left-image col-md-12 col-lg-6 col-sm-12  col-xs-12">
 
                     <img class="img-responsive w-100" src="./assets/message-left-man.png" alt="">
-                   
+
 
                </div>
                <div class="message-form col-md-12 col-lg-6 col-xs-12 col-sm-12 ">
@@ -594,7 +606,8 @@
 
                                    </div>
                               </div>
-                              <button class="btn-submit mt-5">Submit here <i class="fa-solid fa-chevron-right"></i></button>
+                              <button class="btn-submit mt-5">Submit here <i
+                                        class="fa-solid fa-chevron-right"></i></button>
                          </div>
                     </div>
 
@@ -687,8 +700,8 @@
                          <p>4100 north stress</p>
                          <p>Eastern Standard Time (EST)</p>
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                         <div class="row gx-5">
+                    <div class="col-md-4 col-lg-4 col-sm-12 size">
+                         <div class="row gx-4">
                               <div class="col-4">
                                    <h4>Support</h4>
                                    <p>Pricing</p>
@@ -721,16 +734,17 @@
                          </div>
                     </div>
                     <div class="col-md-5 col-sm-12">
-                         
-                              <div>
-                                   <h4>Subscribe To Our Newsletter</h3>
-                                   <p class="mt-4">more recntly with desktop publishing <br> like Aldas PageMaker including</p>
+
+                         <div>
+                              <h4>Subscribe To Our Newsletter</h3>
+                                   <p class="mt-4">more recntly with desktop publishing <br> like Aldas PageMaker
+                                        including</p>
                                    <div class="d-flex gap-5 flex-wrap flex-lg-nowrap justify-content-center mt-5">
                                         <input type="text" placeholder="Enter Your Mail">
                                         <button class="footer-btn">Subscribe</button>
                                    </div>
-                              </div>
-                         
+                         </div>
+
 
                     </div>
                </div>
@@ -748,7 +762,7 @@
      <!-- Footer end -->
 
 
-   
+
 
      <!-- js -->
      <script src="./js/app.js"></script>

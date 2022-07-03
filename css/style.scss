@@ -13,72 +13,133 @@ $font-bold: 700;
 
 nav {
 	display: flex;
-	justify-content: space-between;
+	height: 120px;
+	width: 100%;
 	align-items: center;
-	margin-top: 20px;
-
-	.nav-logo p {
+	justify-content: space-between;
+	padding: 0 50px 0 100px;
+	flex-wrap: wrap;
+	.logo {
 		font-size: 22px;
 		font-weight: $font-bold;
+		p {
+			color: #000000;
+		}
 	}
-	.nav-items ul {
-		list-style: none;
+	ul {
 		display: flex;
-	}
-	li {
-		margin: 0 25px;
-		padding-top: 15px;
-		cursor: pointer;
-		color: #546c80;
-	}
-	li:hover {
-		font-weight: $font-medium;
-		transition: 0.3s ease-in-out;
-		color: #303e49;
-	}
-	.get-btn button {
-		border: none;
-		border-radius: 10px;
-		padding: 10px 30px;
-		background-color: #282a2c;
-		color: white;
-	}
-	.get-btn button:hover {
-		background-color: $pm-color;
-	}
-	.menu-icon img {
-		width: 24px;
-	}
-}
-@media only screen and (min-width: 320px) {
-	nav {
+		flex-wrap: wrap;
+		list-style: none;
 		li {
-			margin: 0 10px;
-			padding: 5px;
-		}
-		ul {
-			position: absolute;
-			right: 10px;
-			background-color: whitesmoke;
-			top: 97px;
+			margin: 0 5px;
+			a {
+				color: #303e49;
+				text-decoration: none;
+				font-size: 18px;
+				font-weight: $font-regular;
+				padding: 8px 15px;
+				border-radius: 5px;
+				letter-spacing: 1px;
+				transition: all 0.3s ease;
+				&:hover {
+					color: #303e49;
+					font-weight: $font-bold;
+				}
+			}
+			a.active {
+				color: black;
+				font-weight: $font-bold;
+			}
 		}
 	}
-}
-@media only screen and (min-width: 769px) {
-	nav {
-		li {
-			margin: 0 20px;
-			padding-top: 1px;
-			cursor: pointer;
+	.menu-btn {
+		i {
+			color: $pm-color;
 			font-size: 22px;
-		}
-		ul {
-			top: 43px;
-			display: flex;
-			right: 725px;
-			background: none;
+			cursor: pointer;
+			display: none;
 		}
 	}
+}
+input[type="checkbox"] {
+	display: none;
+}
+@media (max-width: 1000px) {
+	nav {
+		padding: 0 40px 0 50px;
+	}
+}
+
+@media (max-width: 920px) {
+	nav {
+		.menu-btn {
+			i {
+				display: block;
+			}
+		}
+		ul {
+			position: relative;
+			top: 80px;
+			left: -100%;
+			background: #ffffff;
+			height: 100vh;
+			width: 100%;
+			text-align: center;
+			display: block;
+			transition: all 0.3s ease;
+			li {
+				width: 100%;
+				margin: 40px 0;
+				a {
+					width: 100%;
+					margin-left: -100%;
+					display: block;
+					font-size: 20px;
+					transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+					&:hover {
+						// background: none;
+						color: $pm-color;
+					}
+				}
+				a.active {
+					// background: none;
+					color: $pm-color;
+				}
+			}
+		}
+	}
+	#click {
+		&:checked {
+			~ {
+				.menu-btn {
+					i {
+						&:before {
+							content: "\f00d";
+						}
+					}
+				}
+				ul {
+					left: 0;
+					li {
+						a {
+							margin-left: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.get-btn button {
+	border: none;
+	border-radius: 10px;
+	padding: 10px 30px;
+	background-color: #282a2c;
+	color: white;
+}
+.get-btn button:hover {
+	background-color: $pm-color;
 }
 
 header {
@@ -273,6 +334,133 @@ header {
 			border: none;
 			cursor: pointer;
 		}
+
+		// for button animination
+
+		.video-play-button {
+			// margin-top: 38vh;
+			// margin-bottom: 25vh;
+			position: relative;
+			transform: translateX(-50%) translateY(-50%);
+			box-sizing: content-box;
+			width: 32px;
+			height: 44px;
+			border-radius: 50%;
+			padding: 18px 20px 18px 28px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.video-play-button:before {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			display: block;
+			width: 80px;
+			height: 80px;
+			background: $pm-color;
+			border-radius: 50%;
+			animation: pulse-border 1500ms ease-out infinite;
+		}
+
+		.video-play-button:after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			display: block;
+			width: 80px;
+			height: 80px;
+			background: $pm-color;
+			border-radius: 50%;
+			transition: all 200ms;
+		}
+
+		.video-play-button:hover:after {
+			background-color: darken($pm-color, 20%);
+		}
+
+		.video-play-button img {
+			position: relative;
+			z-index: 3;
+			max-width: 100%;
+			width: auto;
+			height: auto;
+		}
+
+		.video-play-button span {
+			display: block;
+			position: relative;
+			z-index: 3;
+			width: 0;
+			height: 0;
+			border-left: 32px solid #fff;
+			border-top: 22px solid transparent;
+			border-bottom: 22px solid transparent;
+		}
+
+		@keyframes pulse-border {
+			0% {
+				transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+				opacity: 1;
+			}
+			100% {
+				transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+				opacity: 0;
+			}
+		}
+
+		.video-overlay {
+			position: fixed;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.8);
+			opacity: 0;
+			transition: all ease 500ms;
+		}
+
+		.video-overlay.open {
+			position: fixed;
+			z-index: 1000;
+			opacity: 1;
+		}
+
+		.video-overlay-close {
+			position: absolute;
+			z-index: 1000;
+			top: 15px;
+			right: 20px;
+			font-size: 36px;
+			line-height: 1;
+			font-weight: 400;
+			color: #fff;
+			text-decoration: none;
+			cursor: pointer;
+			transition: all 200ms;
+		}
+
+		.video-overlay-close:hover {
+			color: $pm-color;
+		}
+
+		.video-overlay iframe {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			/* width: 90%; */
+			/* height: auto; */
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+		}
 	}
 	.w-details {
 		padding-top: 60px;
@@ -301,6 +489,10 @@ header {
 			margin-bottom: 7vh;
 		}
 	}
+	.video-play-button {
+		margin-top: 5rem;
+		margin-left: 4rem;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -309,12 +501,10 @@ header {
 	}
 	.why-section .why-section-banner {
 		border-radius: 50px;
-		img {
-			min-height: 100px;
-
-			margin-top: 25vh;
-			margin-bottom: 27vh;
-		}
+	}
+	.video-play-button {
+		margin-top: 12rem;
+		margin-bottom: 8rem;
 	}
 }
 @media only screen and (min-width: 1024px) {
@@ -323,12 +513,10 @@ header {
 	}
 	.why-section .why-section-banner {
 		border-radius: 50px;
-		img {
-			min-height: 100px;
-
-			margin-top: 20vh;
-			margin-bottom: 27vh;
-		}
+	}
+	.video-play-button {
+		margin-top: 15rem;
+		margin-bottom: 12rem;
 	}
 }
 .groth-section {
@@ -600,6 +788,7 @@ footer {
 		padding: 10px;
 		width: 100%;
 	}
+
 	.subscribe-btn {
 		display: flex;
 		justify-content: center;
@@ -620,3 +809,4 @@ footer {
 		}
 	}
 }
+

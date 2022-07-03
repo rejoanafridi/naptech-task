@@ -7,69 +7,117 @@
 
 nav {
   display: flex;
-  justify-content: space-between;
+  height: 120px;
+  width: 100%;
   align-items: center;
-  margin-top: 20px;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
 }
-nav .nav-logo p {
+nav .logo {
   font-size: 22px;
   font-weight: 700;
 }
-nav .nav-items ul {
-  list-style: none;
+nav .logo p {
+  color: #000000;
+}
+nav ul {
   display: flex;
+  flex-wrap: wrap;
+  list-style: none;
 }
-nav li {
-  margin: 0 25px;
-  padding-top: 15px;
-  cursor: pointer;
-  color: #546c80;
+nav ul li {
+  margin: 0 5px;
 }
-nav li:hover {
-  font-weight: 500;
-  transition: 0.3s ease-in-out;
+nav ul li a {
   color: #303e49;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
-nav .get-btn button {
+nav ul li a:hover {
+  color: #303e49;
+  font-weight: 700;
+}
+nav ul li a.active {
+  color: black;
+  font-weight: 700;
+}
+nav .menu-btn i {
+  color: #3a78f2;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+  nav ul {
+    position: relative;
+    top: 80px;
+    left: -100%;
+    background: #ffffff;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  nav ul li a:hover {
+    color: #3a78f2;
+  }
+  nav ul li a.active {
+    color: #3a78f2;
+  }
+
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+}
+.get-btn button {
   border: none;
   border-radius: 10px;
   padding: 10px 30px;
   background-color: #282a2c;
   color: white;
 }
-nav .get-btn button:hover {
+
+.get-btn button:hover {
   background-color: #3a78f2;
 }
-nav .menu-icon img {
-  width: 24px;
-}
 
-@media only screen and (min-width: 320px) {
-  nav li {
-    margin: 0 10px;
-    padding: 5px;
-  }
-  nav ul {
-    position: absolute;
-    right: 10px;
-    background-color: whitesmoke;
-    top: 97px;
-  }
-}
-@media only screen and (min-width: 769px) {
-  nav li {
-    margin: 0 20px;
-    padding-top: 1px;
-    cursor: pointer;
-    font-size: 22px;
-  }
-  nav ul {
-    top: 43px;
-    display: flex;
-    right: 725px;
-    background: none;
-  }
-}
 header {
   background: url(../assets/banner-left-star.png);
   background-repeat: no-repeat;
@@ -242,6 +290,117 @@ header .h-section-icon img:hover {
   border: none;
   cursor: pointer;
 }
+.why-section .why-section-banner .video-play-button {
+  position: relative;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  width: 32px;
+  height: 44px;
+  border-radius: 50%;
+  padding: 18px 20px 18px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.why-section .why-section-banner .video-play-button:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #3a78f2;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+.why-section .why-section-banner .video-play-button:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #3a78f2;
+  border-radius: 50%;
+  transition: all 200ms;
+}
+.why-section .why-section-banner .video-play-button:hover:after {
+  background-color: #0c47ba;
+}
+.why-section .why-section-banner .video-play-button img {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+.why-section .why-section-banner .video-play-button span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 32px solid #fff;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+}
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+.why-section .why-section-banner .video-overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: all ease 500ms;
+}
+.why-section .why-section-banner .video-overlay.open {
+  position: fixed;
+  z-index: 1000;
+  opacity: 1;
+}
+.why-section .why-section-banner .video-overlay-close {
+  position: absolute;
+  z-index: 1000;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.why-section .why-section-banner .video-overlay-close:hover {
+  color: #3a78f2;
+}
+.why-section .why-section-banner .video-overlay iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* width: 90%; */
+  /* height: auto; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+}
 .why-section .w-details {
   padding-top: 60px;
 }
@@ -268,6 +427,11 @@ header .h-section-icon img:hover {
     margin-top: 7vh;
     margin-bottom: 7vh;
   }
+
+  .video-play-button {
+    margin-top: 5rem;
+    margin-left: 4rem;
+  }
 }
 @media only screen and (min-width: 768px) {
   .section-wy {
@@ -277,10 +441,10 @@ header .h-section-icon img:hover {
   .why-section .why-section-banner {
     border-radius: 50px;
   }
-  .why-section .why-section-banner img {
-    min-height: 100px;
-    margin-top: 25vh;
-    margin-bottom: 27vh;
+
+  .video-play-button {
+    margin-top: 12rem;
+    margin-bottom: 8rem;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -291,10 +455,10 @@ header .h-section-icon img:hover {
   .why-section .why-section-banner {
     border-radius: 50px;
   }
-  .why-section .why-section-banner img {
-    min-height: 100px;
-    margin-top: 20vh;
-    margin-bottom: 27vh;
+
+  .video-play-button {
+    margin-top: 15rem;
+    margin-bottom: 12rem;
   }
 }
 .groth-section {
